@@ -1,2 +1,0 @@
-# GroceGo
-E-Grocery
