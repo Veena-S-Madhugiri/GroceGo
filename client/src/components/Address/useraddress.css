@@ -1,0 +1,13 @@
+::after, ::before {
+    box-sizing: border-box;
+   
+    
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    flex-direction: column;
+    justify-content: center; /* center vertically */
+    margin-left: 60%;
+  }

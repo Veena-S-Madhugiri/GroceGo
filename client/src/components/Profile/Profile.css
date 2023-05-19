@@ -1,0 +1,237 @@
+ /* USER DETAILS FORM STYLING  */
+
+
+ .profile {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 100%;
+   font-family: 'Times New Roman', Times, serif;
+ }
+
+ .user-data {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-start;
+ }
+
+ .form1 {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   margin-right: 20px;
+   flex-wrap: wrap;
+   align-content: space-around;
+   justify-content: space-evenly;
+   align-items: flex-start;
+   font-family: 'Times New Roman', Times, serif;
+   /* background-color: #e3f9e4; */
+ }
+
+ .form2 {
+   flex: 1;
+   margin-top: 20px;
+ }
+
+ table {
+   border-collapse: collapse;
+   width: 100%;
+ }
+
+ th,
+ td {
+   text-align: left;
+   padding: 8px;
+ }
+
+ th {
+   /* background-color: #b7f7a6; */
+   color: white;
+ }
+
+ tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+
+ .btn {
+   display: flex;
+   justify-content: center;
+   /* color: #0d0e0d; */
+   margin-bottom: 15px;
+
+ }
+
+ .profileContainer .btn button {
+
+   background-color: #218838;
+   border: none;
+   color: #ffffff;
+   padding: 10px 20px;
+   font-size: 1rem;
+   border-radius: 5px;
+   margin-top: 30px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+
+ }
+
+ .profileContainer .btn button:hover {
+
+   background-color: #f2f2f2;
+ }
+
+ .address-form {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   /* margin-left: 20px; */
+   flex-wrap: wrap;
+   align-content: space-between;
+   justify-content: space-evenly;
+   align-items: flex-start;
+   padding-bottom: 100px;
+   /* margin-right: 10px; */
+   background-color: #a3dfc1;
+
+ }
+
+ .container {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   flex-direction: row;
+
+ }
+
+ .profileContainer {
+   border: 2px solid #a3dfc1;
+   margin-top: 50px;
+   border-radius: 12px;
+   justify-content: center;
+   align-items: center;
+   margin: 50px;
+   width: 45%;
+   height: 360px;
+ }
+
+
+ .form1 h1 {
+   border: 2px solid #a3dfc1;
+   border-radius: 12px;
+   font-family: 'Times New Roman', Times, serif;
+
+
+ }
+
+ .profileContainer h1 {
+
+   font-size: 1.5rem;
+   margin-bottom: 10px;
+ }
+
+
+ .profileContainer p {
+
+   font-size: 1rem;
+   margin-bottom: 10px;
+ }
+
+ .profileContainer table {
+
+   background-color: #a3dfc1;
+   border-collapse: collapse;
+ }
+
+ .profileContainer table thead tr {
+   font-size: 1rem;
+   font-weight: bold;
+   background-color: #a3dfc1;
+   color: black;
+ }
+
+ .profileContainer table td {
+
+   padding: 10px;
+   text-align: left;
+ }
+
+ .profileContainer table td:first-child {
+
+   text-align: left;
+ }
+
+
+ th {
+   background-color: #b7f7a6;
+   color: #0b0a0a;
+
+ }
+
+
+
+ .profileContainer .Addbtn button {
+   background-color: #076d03;
+   border: none;
+   border-radius: 5px;
+   color: #fff;
+   cursor: pointer;
+   font-size: 16px;
+   height: 40px;
+   margin-left: 250px;
+   width: 100px;
+   padding: 10px 20px;
+   margin-bottom: 100px;
+   transition: all 0.3s ease;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   margin-right: 10px;
+   margin-top: 30px;
+
+ }
+
+ button[type="submit"]:hover {
+   background-color: #218838;
+ }
+
+ .profileContainer .Addbtn button:hover {
+   opacity: 0.8;
+   color: #cee055;
+ }
+
+
+ .Addbtn {
+   border: none;
+   border-radius: 5px;
+   color: #fff;
+   cursor: pointer;
+   font-size: 16px;
+   height: 40px;
+   margin-right: 20px;
+   width: 100px;
+ }
+
+ .DelteIcon {
+
+   height: 20px;
+   width: 20px;
+ }
+
+
+ .HomeIcon {
+   width: 35px;
+   /* margin-top: 50px; */
+   margin-bottom: 92px;
+   font-family: 'Times New Roman', Times, serif;
+ }
+
+ .cancel {
+   background-color: #dc3545;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   font-size: 16px;
+   cursor: pointer;
+   margin-right: 60px;
+ }

@@ -1,0 +1,88 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a3dfc1;
+  color: #050505;
+  height: 50px;
+}
+
+/* Main section styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15vh;
+  transform: translateY(-50px);
+  margin-top: 140px;
+}
+
+.app-namee {
+  font-size: 4rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-left: 150px;
+  margin-bottom: 0.1rem;
+
+}
+
+.taglinee {
+  font-size: 30px;
+  /* font-family:Georgia, 'Times New Roman', Times, serif; */
+  margin-left: 550px;
+  font-style: italic;
+
+}
+
+.descriptionn {
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 90px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.imgHome {
+
+  background-image: url('https://peninsula.co.za/wp-content/uploads/2016/05/groceries_12801.jpg');
+  background-repeat: no-repeat;
+  align-items: center;
+  shape-image-threshold: initial;
+  background-position-x: 300px;
+  background-image: -o-linear-gradient(10);
+  margin-top: 10px;
+  position: relative;
+  bottom: 0;
+  left: 100px
+}
+
+.copy-right {
+  font-weight: bold;
+}
+
+.contact-us {
+  text-align: right;
+  font-weight: bold;
+  margin-left: 60rem;
+}
+
+.contact-us a {
+  color: #0e0e0f;
+  text-decoration: none
+}
+
+.copy-right {
+  font-weight: bold;
+
+
+}
+
+.copy-right :hover {
+  color: #e8dfe6;
+}
+
+
+.contact-us a:hover {
+  color: #dfd7de;
+
+}

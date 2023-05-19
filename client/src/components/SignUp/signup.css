@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #be68d5;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  align-items: left;
+}
+
+.signup-form {
+width: 350px;
+margin: 40px auto;
+margin-top: 45px;
+padding: 30px;
+transform: translateX(400px);
+background: #f4f7fa;
+border-radius: 15px;
+box-shadow: 0px 0px 10px #cdd5de;
+background-color: #0a8d8d;
+background-image: url('https://assets.skyfilabs.com/images/blog/online-grocery-recommendation-using-machine-learning.webp');
+font-family: Georgia, 'Times New Roman', Times, serif;
+height: 87%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 50px;
+/* transform: translateY(-50px); */
+
+
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #6ed14d;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #65d463;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #e385da;
+}
+
+input[type="submit"]:active {
+  background-color: #e9d371;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.signup-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #070707;
+}
+
+.signup-input {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  width: 300px;
+  border: 1px solid #9eefb6;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signup-button:hover {
+  background-color: #aa8ee6;
+}
+
+.signup-error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.signup-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.signup-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://assets.dmagstatic.com/wp-content/uploads/2019/10/2001-ross-ave-dallas-tx-High-Res-3.jpg');
+  background-size: cover;
+  background-position: 0%;
+  /* opacity: 0.8;  */
+}
+
+
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.account {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-left: 90px;
+  margin-left: 35px;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}

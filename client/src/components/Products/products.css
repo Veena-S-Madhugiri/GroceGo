@@ -1,0 +1,183 @@
+.shopping-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    transition: fadIn 1s ease-in-out;
+}
+
+.product {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.productform img {
+    height: 175px;
+    border-radius: 2px;
+    object-fit: fill;
+    cursor: default;
+    margin: 14px auto;
+    display: flex;
+}
+
+
+.productform img:hover {
+    transform: scale(2);
+}
+
+.productform p {
+
+    font-size: medium;
+    font-weight: bold;
+}
+
+.productform button {
+    margin-top: auto;
+    background-color: rgb(114, 210, 105);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 150px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.productform button:hover {
+    background-color: #3e8e41;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.productform {
+    position: relative;
+    margin: 10px;
+    font-size: 50px;
+    border-radius: 5%;
+    width: 300px;
+    height: 350px;
+    background-color:hsla(144, 43%, 68%, 0.102)
+
+}
+
+
+
+.productform .cart-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    z-index: 1;
+}
+
+.productform button {
+    margin-top: auto;
+
+}
+
+.btn button:hover {
+    background-color: lightskyblue;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.amount {
+    padding-left: 70px;
+}
+
+.description {
+    font-size: medium;
+}
+
+
+.NAVPRODUCTS {
+
+    background-color: #aae9aa;
+    justify-content: space-around;
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 1%; 
+    background-color:  #a3dfc1;
+    color: #269746;
+    border: 1px solid #f4eded;
+    padding: 5px 5px;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.shopping-cards {
+
+    flex-basis: 25%;
+}
+
+.NAVPRODUCTS button {
+
+    margin-top: auto;
+    background-color: rgb(246, 250, 249);
+    color: rgb(1, 1, 1);
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200px;
+    font-size: larger;
+}
+
+.NAVPRODUCTS button:hover {
+
+    background-color: #269746;
+}
+
+.ShopImage {
+
+    margin-left: 50px;
+}
+
+.Shopbutton {
+    margin-left: 80px;
+}
+
+.ShopDetails {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ShopDetails p {
+    padding: 4px;
+    margin: 0px
+    
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+

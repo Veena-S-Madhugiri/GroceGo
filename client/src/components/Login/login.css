@@ -1,0 +1,125 @@
+.login-container {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  height: 92vh;
+  background-image: url('https://assets.skyfilabs.com/images/blog/online-grocery-recommendation-using-machine-learning.webp');
+  background-size: cover;
+  bottom: 80px;
+
+
+
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+
+}
+
+.login-heading {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #0b0a0a;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.input-label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.input-field {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #a3dce3;
+  font-size: 16px;
+  color: #333;
+}
+
+.login-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #0b0c0c;
+  color: #e4eae9;
+  font-size: 18px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #c6de59;
+}
+
+
+.account {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  margin-left: 90px;
+  margin-left: 30px;
+}
+
+.logo {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 440px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.8;
+  margin-bottom: 40vh;
+  background-color: #b0f1ed;
+
+}
+
+.logo-icon {
+
+  height: fit-content;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 75px;
+  font-family: 'Times New Roman', Times, serif;
+
+}

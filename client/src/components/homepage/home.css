@@ -1,0 +1,181 @@
+/* primary navigation styling */
+.primary-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    /* background-color:  */
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.app-name1 {
+    height: 10px;
+    align-items: center;
+    font-size: 45px;
+    font-weight: 400;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    /* margin-right: 50px; */
+
+}
+
+.logo {
+    height: 40px;
+
+}
+
+.login-heading {
+
+    margin-top: 0%;
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    height: 100%;
+}
+
+.my-account-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background: #359f84;
+
+}
+
+.description1 {
+
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    /* margin-bottom: 200px; */
+    font-family:Philosopher;
+    margin: 150px;
+
+}
+
+
+.my-account-dropdown {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    top: 70px;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 1;
+    width: 150px;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.profile:hover .dropdown-content {
+    display: block;
+}
+
+.my-account-dropdown a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.my-account-dropdown :hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.my-account-btn:hover+.my-account-dropdown {
+    display: block;
+}
+
+.search-logout button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* secondary navigation styling */
+.secondary-nav {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+}
+
+.secondary-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.secondary-nav li {
+    margin-right: 20px;
+}
+
+.secondary-nav li:last-child {
+    margin-right: 0;
+}
+
+.secondary-nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 20px;
+
+}
+
+.secondary-nav a:hover {
+    color: #ff6600;
+}
+
+
+.homepage {
+    background-image: url('https://i.pinimg.com/564x/d1/38/2a/d1382aa91dc3276fcdadfbe3fcc60c3e.jpg'), url('https://i.pinimg.com/564x/a9/b2/aa/a9b2aaf4f1d04e3060c82bb3164a9ce4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top, right top;
+    height: 85vh;
+    display: block;
+    /* background-color: #e9f7f3; */
+}
+
+
+.login-btn {
+    margin-left: 50px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 40px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+.tagline1{
+
+    font-size: 35px;
+    font-weight: 200;
+    text-align: center;
+    /* margin-bottom: 200px; */
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 70px;
+    font-family:Sacramento;
+    /* margin: 70px; */
+    
+}
