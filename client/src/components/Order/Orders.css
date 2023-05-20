@@ -1,0 +1,17 @@
+.Cancel{
+    height: 20px;
+    width: 20px;
+}
+
+.product-item{
+
+    align-items: center;
+    /* margin-bottom: 80px; */
+}
+
+
+span.product-name{
+
+    margin-bottom: 100px;
+}
+

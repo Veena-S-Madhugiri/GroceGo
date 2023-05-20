@@ -39,7 +39,8 @@ function Home() {
           </div>
 
 
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          {/* <ul className={click ? "nav-menu active" : "nav-menu"}> */}
+<ul className='nav-menu'>
             {loggedIn ? (
               <>
                 <li className="nav-item">

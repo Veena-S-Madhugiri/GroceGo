@@ -106,7 +106,7 @@ function Cart() {
   
   
         {cartItems.length === 0 ? (
-    <h3>Your cart is empty. Add items to your cart</h3>
+    <h3>Your cart is empty!!</h3>
   ) : (
     <>
   <h1>Shopping Cart</h1>

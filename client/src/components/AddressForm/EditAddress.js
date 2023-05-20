@@ -4,14 +4,14 @@ import "./EditAddress.css";
 
 
 
-const EditAddress = ({fetchUserAddress, addressId}) => {
+const EditAddress = ({fetchUserAddress, addressId, existingAddress}) => {
   const [address, setAddress] = useState({
-    street: '',
-    area: '',
-    city: '',
-    state: '',
-    country: '',
-    zipCode: '',
+    street: existingAddress.street, 
+    area: existingAddress.area,
+    city: existingAddress.city,
+    state: existingAddress.state,
+    country: existingAddress.country,
+    zipCode: existingAddress.zipCode,
   });
   const [validationMsg, setValidationMsg] = useState('');
   const [addressEdited, setAddressEdited] = useState(false); // Add state variable to track whether address was added or not

@@ -16,6 +16,8 @@ const Profile = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [country, setCountry] = useState("");
+  const [existingAddress, setExistingAddress] = useState("")
+
   const [zipCode, setZipcode] = useState("");
   const [showEditAddressForm, setShowEditAddressForm] = useState(false);
   const [form, setform] = useState(false);
@@ -151,6 +153,8 @@ const Profile = () => {
                   <th>State</th>
                   <th>Country</th>
                   <th>Zip-Code</th>
+                  <th></th>
+
               
                 </tr>
               </thead>
@@ -164,7 +168,7 @@ const Profile = () => {
                       <td>{address.state}</td>
                       <td>{address.country}</td>
                       <td>{address.zipCode}</td>
-                      <td><button onClick={() => handleAddressDelete(address._id)}><img
+                      <td><button onClick={() => handleAddressDelete(address._id) }><img
                       src={require("../Profile/delete.png")}
                       alt="Logo"
                       
@@ -172,6 +176,7 @@ const Profile = () => {
                     /></button><button onClick={() => {
                         handleAddressEdit();
                         handlePassAddressId(address._id)
+                        setExistingAddress(address)
                       }}>Edit</button></td>
 
                     </tr>
@@ -191,7 +196,7 @@ const Profile = () => {
     
       <div className='addressContainer'>
   {showEditAddressForm && (
-    <EditAddress fetchUserAddress={fetchAddressData} addressId={userAddressId} />
+    <EditAddress fetchUserAddress={fetchAddressData} addressId={userAddressId} existingAddress={existingAddress}/>
   )}
   {form && (
     <div className="auth-form-container">

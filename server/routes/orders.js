@@ -26,31 +26,32 @@ router.get("/getOrders", verifyToken, async (req, res) => {
 });
 
 
-// // Route 2
-// // Cancel orders
-// // router.put("/cancelOrders/:orderId", FetchUser, async (req, res) => {
-// //   try {
-// //     const orderId = req.params.orderId;
-// //     const updatedOrder = await Orders.findByIdAndUpdate(orderId, { 
-// //       status: 'Cancelled',
-// //       payment: {
-// //         success: false
-// //       }
-// //     }, { new: true });
+// Route 2
+// Cancel orders
+
+router.put("/cancelOrders/:orderId", verifyToken, async (req, res) => {
+  try {
+    const orderId = req.params.orderId;
+    const updatedOrder = await Orders.findByIdAndUpdate(orderId, { 
+      status: 'Cancelled',
+      payment: {
+        success: false
+      }
+    }, { new: true });
     
 
-// //     if (!updatedOrder) {
-// //       return res.status(404).json({ message: 'Order not found' });
-// //     }
+    if (!updatedOrder) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
 
 
 
-// //     res.json({ success: true, message: 'Order Cancelled' });
-// //   } catch (error) {
-// //     console.error(error);
-// //     res.status(500).json({ message: 'Internal server error' });
-// //   }
-// // });
+    res.json({ success: true, message: 'Order Cancelled' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 
 
 

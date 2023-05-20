@@ -99,6 +99,7 @@ const Product = () => {
   return (
     <div className='product'>
       <Navbar />
+      {/* <h1 style={{textAlign:"center"}}>"Fueling your pantry, feeding your soul."</h1> */}
       <div className='NAVPRODUCTS'>
         <button value='Fruits' onClick={handleFilterClick}>
           Fruits
