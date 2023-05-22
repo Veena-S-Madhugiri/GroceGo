@@ -10,7 +10,7 @@ router.get("/getOrders", verifyToken, async (req, res) => {
   try {
     const orders = await Orders.find({ buyer: req.user.id })
      
-      .populate("products")
+      .populate("products.product")
       .populate("buyer", "firstName").populate("shippingAddress");
 
     return res.status(200).json(orders);
@@ -32,7 +32,7 @@ router.get("/getOrders", verifyToken, async (req, res) => {
 router.put("/cancelOrders/:orderId", verifyToken, async (req, res) => {
   try {
     const orderId = req.params.orderId;
-    const updatedOrder = await Orders.findByIdAndUpdate(orderId, { 
+    const updatedOrder = await Orders.findByIdAndUpdate({orderId,buyer: req.user.id}, { 
       status: 'Cancelled',
       payment: {
         success: false
@@ -52,8 +52,6 @@ router.put("/cancelOrders/:orderId", verifyToken, async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
-
 
 
 

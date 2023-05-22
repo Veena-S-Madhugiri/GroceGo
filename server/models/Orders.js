@@ -16,10 +16,11 @@ const ordersSchema = new mongoose.Schema({
 //     productId: String,
 //     qty: Number,
 //   }],
-  products: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product',
-  }],
+products: [{
+  product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+  numberOfQuantity: Number
+}],
+
   shippingAddress: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Address',

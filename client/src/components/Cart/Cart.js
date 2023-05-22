@@ -20,9 +20,25 @@ function Cart() {
     const cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
     setCartItems(cart);
 
-    const total = cart.reduce((acc, item) => acc + item.price, 0);
-    setCartTotal(total);
+  
   }, []);
+
+
+  const totalPrice = () => {
+    try {
+    
+      const total = cartItems.reduce(
+        (acc, item) => acc + item.price * item.numberOfQuantity,
+        0
+      );
+      return total.toLocaleString("en-IN", {
+        style: "currency",
+        currency: "INR",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     fetch('http://localhost:8000/api/braintree/token')
@@ -53,15 +69,31 @@ function Cart() {
     }
   };
 
-  useEffect(() => {
+  const incrementItemQuantity = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart[index].numberOfQuantity += 1;
+    setCartItems(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
 
+  const decrementItemQuantity = (index) => {
+    const updatedCart = [...cartItems];
+    if (updatedCart[index].numberOfQuantity > 1) {
+      updatedCart[index].numberOfQuantity -= 1;
+      setCartItems(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
+    }
+  };
+
+  useEffect(() => {
     fetchAddressData();
   }, [token]);
-  const totalPrice = cartTotal.toLocaleString('en-IN', {
-    maximumFractionDigits: 2,
-    style: 'currency',
-    currency: 'INR',
-  });
+
+  // const totalPrice = cartTotal.toLocaleString('en-IN', {
+  //   maximumFractionDigits: 2,
+  //   style: 'currency',
+  //   currency: 'INR',
+  // });
 
   const handlePayment = async (event) => {
     event.preventDefault();
@@ -102,33 +134,35 @@ function Cart() {
     <div className="cartcontainer">
       <div className="row">
         <div className="col-md-7">
-        <div className="cart-container">
-  
-  
-        {cartItems.length === 0 ? (
-    <h3>Your cart is empty!!</h3>
-  ) : (
-    <>
-  <h1>Shopping Cart</h1>
-
-    <div className="cart-items">
-      {cartItems.map((item) => (
-        <div className="cart-item" key={item._id}>
-          <img src={item.photo} alt={item.name} />
-          <div className="item-details">
-            <h3>{item.name}</h3>
-            <p>Price: ₹{item.price}</p>
-            <button onClick={() => handleRemoveItem(item._id) }>
-              Remove
-            </button>
+          <div className="cart-container">
+            {cartItems.length === 0 ? (
+              <h3>Your cart is empty!!</h3>
+            ) : (
+              <>
+                <h1>Shopping Cart</h1>
+                <div className="cart-items">
+                  {cartItems.map((item, index) => (
+                    <div className="cart-item" key={item._id}>
+                      <img src={item.photo} alt={item.name} />
+                      <div className="item-details">
+                        <h3>{item.name}</h3>
+                        <p>Price: ₹{item.price}</p>
+                        <span style={{ marginLeft: "100px" }}>
+                          {item.quantity} * {item.numberOfQuantity}
+                        </span>
+                        <div className="cartQty">
+                          <button onClick={() => incrementItemQuantity(index)}>+</button>
+                          <span style={{ margin: "0px 10px" }}>Qty: {item.numberOfQuantity}</span>
+                          <button onClick={() => decrementItemQuantity(index)}>-</button>
+                          <button onClick={() => handleRemoveItem(item._id)}>Remove</button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
-        </div>
-      ))}
-    </div>
-    </>
-  )}
-  {/* <button className="btn btn-primary checkout-button">Checkout</button> */}
-</div>
         </div>
         <div className="col-md-5">
           <div className="order-summary-container">
@@ -137,7 +171,7 @@ function Cart() {
               <div className="order-summary">
                 <div className="d-flex justify-content-between mt-3">
                   <h6>Subtotal:</h6>
-                  <h6>{totalPrice}</h6>
+                  <h6>{totalPrice()}</h6>
                 </div>
                 <div className="d-flex justify-content-between mt-3">
                   <h6>Delivery Charges:</h6>
@@ -145,46 +179,40 @@ function Cart() {
                 </div>
                 <div className="d-flex justify-content-between mt-3">
                   <h6>Total:</h6>
-                  <h6>{totalPrice}</h6>
+                  <h6>{totalPrice()}</h6>
                 </div>
                 <div className="mb-3 addressCartContainer">
-              <h5>Select an address:</h5>
-              {addressList && addressList.length > 0 ? (
-                <select
-                  name="address"
-                  onChange={(e) =>
-                    localStorage.setItem("selectedAddress", e.target.value)
-                  }
-                >
-                  <option value="" disabled>
-                    Select an address
-                  </option>
-                  {Array.isArray(addressList) &&
-                  addressList.map((address) => (
-                    <option key={address._id} value={address._id}>
-                      {address.street}, {address.area},{address.city}, {address.state}{" "}
-                      {address.zipCode}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <>
-                  <p>No addresses found. </p>
-                  <p>
-                    Please{" "}
-                    <a href="/profile" className="link">
-                      add an address
-                    </a>{" "}
-                    before continuing.
-                  </p>
-                </>
-              )}
-            </div>
-                {!clientToken || !cartItems?.length ? (
+                  <h5>Select an address:</h5>
+                  {addressList && addressList.length > 0 ? (
+                    <select
+                      name="address"
+                      onChange={(e) => localStorage.setItem("selectedAddress", e.target.value)}
+                    >
+                      <option value="" disabled>
+                        Select an address
+                      </option>
+                      {addressList.map((address) => (
+                        <option key={address._id} value={address._id}>
+                          {address.street}, {address.area}, {address.city}, {address.state} {address.zipCode}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <>
+                      <p>No addresses found. </p>
+                      <p>
+                        Please{" "}
+                        <a href="/profile" className="link">
+                          add an address
+                        </a>{" "}
+                        before continuing.
+                      </p>
+                    </>
+                  )}
+                </div>
+                {!clientToken || !cartItems.length ? (
                   ""
                 ) : (
-
-                  
                   <>
                     <DropIn
                       options={{

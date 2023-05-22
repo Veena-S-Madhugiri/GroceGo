@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const verifyToken = require("../Middlewear/Fetch-User");
 const Orders = require('../models/Orders')
+const { ObjectId } = require('mongodb');
 
 var gateway = new braintree.BraintreeGateway({
   environment: braintree.Environment.Sandbox,
@@ -31,47 +32,46 @@ router.get("/braintree/token", async (req, res) => {
 router.post("/braintree/payment", verifyToken, async (req, res) => {
   try {
     const { nonce, cart, selectedAddress } = req.body;
-    console.log(selectedAddress);
+    console.log(cart);
 
     const saleRequest = {
-      amount: cart.reduce((total, item) => total + item.price, 0),
+      amount: cart.reduce((total, item) => total + item.price + item.numberOfQuantity, 0),
       paymentMethodNonce: nonce,
       options: {
         submitForSettlement: true,
       },
     };
 
-    gateway.transaction.sale(saleRequest, function (err, result) {
+    gateway.transaction.sale(saleRequest, async (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).json({ error: "Payment processing failed" });
-      } else {
-        if (result.success) {
-          // Payment successful, process the order
+        return res.status(500).json({ error: "Payment processing failed" });
+      }
 
-          const order = new Orders({
-            
-            products: cart,
-            payment: result,
-            buyer: req.user.id,
-            shippingAddress: selectedAddress  
-          });
-        
-          // Save the order
-          const savedOrder =  order.save();
-          // console.log(savedOrder)
-          res.status(200).json({ ok: true });
-        } else {
-          // Payment failed
-          console.error(result.message);
-          res.status(500).json({ error: "Payment failed" });
-        }
+      if (result.success) {
+        const orderProducts = cart.map(item => ({
+          product: item,
+          numberOfQuantity: item.numberOfQuantity
+        }));
+        const order = new Orders({
+          products: orderProducts,
+          payment: result,
+          buyer: req.user.id,
+          shippingAddress: selectedAddress  
+        });
+
+        const savedOrder = await order.save();
+        return res.status(200).json({ ok: true });
+      } else {
+        console.error(result.message);
+        return res.status(500).json({ error: "Payment failed" });
       }
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Oops! Something went wrong" });
+    return res.status(500).json({ error: "Oops! Something went wrong" });
   }
 });
+
 
 module.exports = router;

@@ -72,7 +72,7 @@ const Product = () => {
       const cart = cartJson ? JSON.parse(cartJson) : [];
 
       // Append new product to cart
-      const newCart = [...cart, product];
+      const newCart = [...cart, { ...product, numberOfQuantity: 1 }];
 
       // Convert cart array to JSON string
       const newCartJson = JSON.stringify(newCart);
