@@ -67,17 +67,17 @@ const Order = () => {
             <tr key={order._id}>
               <td>{index + 1}</td>
               <td>
-              {order.products.map((product, productIndex) => {
-  // Get the product details from the nested 'product' object
-  const productDetails = product.product;
+                {order.products.map((product, productIndex) => {
+                  // Get the product details from the nested 'product' object
+                  const productDetails = product.product;
 
-  return (
-    <div className="product-item" key={productIndex}>
-      <img src={productDetails.photo} width="50" height="50" alt={productDetails.name} />
-      <span className="product-name">{productDetails.name} x {product.numberOfQuantity}</span>
-    </div>
-  );
-})}
+                  return (
+                    <div className="product-item" key={productIndex}>
+                      <img src={productDetails.photo} width="50" height="50" alt={productDetails.name} />
+                      <span className="product-name">{productDetails.name} x {product.numberOfQuantity}</span>
+                    </div>
+                  );
+                })}
 
 
 
