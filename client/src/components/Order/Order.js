@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 
 const Order = () => {
   const [orders, setOrders] = useState([]);
-  console.log(orders)
+  console.log(orders);
 
   const usertoken = Cookies.get('token');
 
@@ -45,7 +45,7 @@ const Order = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="order-container">
@@ -78,9 +78,6 @@ const Order = () => {
                     </div>
                   );
                 })}
-
-
-
               </td>
               <td className={`payment-status ${order.payment.success ? "" : order.status === "Cancelled" ? "refunded" : "not-paid"}`}>
                 {order.payment.success ? "Paid" : order.status === "Cancelled" ? "Refunded" : "Not Paid"}
@@ -99,11 +96,12 @@ const Order = () => {
               </td>
               <td>
                 <button
-                  onClick={() => { handleCancel(order._id) }}
+                  onClick={() => handleCancel(order._id)}
                   style={{
                     cursor: order.status === "Cancelled" ? "not-allowed" : "pointer",
                     opacity: order.status === "Cancelled" ? 0.5 : 1,
                   }}
+                  disabled={order.status === "Cancelled"}
                 >
                   <img
                     src={require("../Order/cancel.png")}
@@ -116,7 +114,6 @@ const Order = () => {
           ))}
         </tbody>
       </table>
-
     </div>
   );
 };

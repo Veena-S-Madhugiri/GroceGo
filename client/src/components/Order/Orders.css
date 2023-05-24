@@ -15,3 +15,12 @@ span.product-name{
     margin-bottom: 100px;
 }
 
+/* .payment-status 
+{
+    color: brown;
+} */
+
+.order-status{
+
+    color: crimson;
+}

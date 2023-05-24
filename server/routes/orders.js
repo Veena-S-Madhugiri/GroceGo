@@ -32,7 +32,7 @@ router.get("/getOrders", verifyToken, async (req, res) => {
 router.put("/cancelOrders/:orderId", verifyToken, async (req, res) => {
   try {
     const orderId = req.params.orderId;
-    const updatedOrder = await Orders.findByIdAndUpdate({orderId,buyer: req.user.id}, { 
+    const updatedOrder = await Orders.findByIdAndUpdate(orderId, { 
       status: 'Cancelled',
       payment: {
         success: false

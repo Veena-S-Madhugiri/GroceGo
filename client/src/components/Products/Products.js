@@ -71,6 +71,8 @@ const Product = () => {
       const cartJson = localStorage.getItem('cart');
       const cart = cartJson ? JSON.parse(cartJson) : [];
 
+      
+
       // Append new product to cart
       const newCart = [...cart, { ...product, numberOfQuantity: 1 }];
 
